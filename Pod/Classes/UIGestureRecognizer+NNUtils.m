@@ -14,14 +14,13 @@
 -(UICollectionViewCell*)attachedCollectionViewCell{
 	UIView* currentView = self.view;
 	while (YES) {
-		UIView* superView = currentView.superview;
-		if( !superView ){
+		if( !currentView ){
 			return nil;
 		}
-		if( [superView isKindOfClass:[UICollectionViewCell class]] ){
-			return (UICollectionViewCell*)superView;
+		if( [currentView isKindOfClass:[UICollectionViewCell class]] ){
+			return (UICollectionViewCell*)currentView;
 		} else {
-			currentView = superView;
+			currentView = currentView.superview;
 		}
 	}
 }
@@ -30,14 +29,13 @@
 -(UITableViewCell*)attachedTableViewCell{
 	UIView* currentView = self.view;
 	while (YES) {
-		UIView* superView = currentView.superview;
-		if( !superView ){
+		if( !currentView ){
 			return nil;
 		}
-		if( [superView isKindOfClass:[UITableViewCell class]] ){
-			return (UITableViewCell*)superView;
+		if( [currentView isKindOfClass:[UITableViewCell class]] ){
+			return (UITableViewCell*)currentView;
 		} else {
-			currentView = superView;
+			currentView = currentView.superview;
 		}
 	}
 }
