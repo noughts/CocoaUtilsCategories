@@ -116,10 +116,19 @@
                                                         <action selector="onButtonTap:" destination="UP9-LS-QqS" eventType="touchUpInside" id="qc8-hW-OEU"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-an-LSX">
+                                                    <rect key="frame" x="150" y="12" width="20" height="20"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="hYT-QG-TWf" appends="YES" id="gl7-pQ-QOh"/>
+                                                    </connections>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="yfx-aW-d15" secondAttribute="trailing" constant="20" symbolic="YES" id="Bov-s6-nOM"/>
+                                                <constraint firstAttribute="centerX" secondItem="GJf-an-LSX" secondAttribute="centerX" id="JEs-qU-viN"/>
                                                 <constraint firstAttribute="centerY" secondItem="yfx-aW-d15" secondAttribute="centerY" id="edt-fd-2iO"/>
+                                                <constraint firstAttribute="centerY" secondItem="GJf-an-LSX" secondAttribute="centerY" id="qk3-Ln-QAn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -227,6 +236,11 @@
                     <navigationItem key="navigationItem" id="B6J-Mv-lSX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VL-wj-hVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hYT-QG-TWf">
+                    <connections>
+                        <action selector="onIndicatorTap:" destination="UP9-LS-QqS" id="9Kj-EZ-xV5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="941" y="-76"/>
         </scene>

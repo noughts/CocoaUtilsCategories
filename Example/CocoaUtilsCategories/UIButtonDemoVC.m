@@ -8,9 +8,14 @@
 
 #import "UIButtonDemoVC.h"
 #import <UIButton+NNUtils.h>
+#import <UIGestureRecognizer+NNUtils.h>
 
 @implementation UIButtonDemoVC
 
+-(IBAction)onIndicatorTap:(UIGestureRecognizer*)sender{
+	UITableViewCell* cell = [sender attachedTableViewCell];
+	NSLog( @"%@", [self.tableView indexPathForCell:cell] );
+}
 
 
 -(IBAction)onButtonTap:(UIButton*)sender{
