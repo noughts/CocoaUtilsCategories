@@ -13,4 +13,7 @@
 /// 自身が配置されているUICollectionViewCell
 -(UICollectionViewCell*)attachedCollectionViewCell;
 
+/// 自身が配置されているUITableViewCell
+-(UITableViewCell*)attachedTableViewCell;
+
 @end

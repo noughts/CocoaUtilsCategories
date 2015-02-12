@@ -27,4 +27,20 @@
 }
 
 
+/// 自身が配置されているUITableViewCell
+-(UITableViewCell*)attachedTableViewCell{
+	UIView* currentView = self;
+	while (YES) {
+		UIView* superView = currentView.superview;
+		if( !superView ){
+			return nil;
+		}
+		if( [superView isKindOfClass:[UITableViewCell class]] ){
+			return (UITableViewCell*)superView;
+		} else {
+			currentView = superView;
+		}
+	}
+}
+
 @end
