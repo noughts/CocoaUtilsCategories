@@ -8,10 +8,48 @@
 
 #import "UIImage+NNUtils.h"
 #import "UIImageEffects.h"
+#import "NNUtils.h"
 
 @implementation UIImage (NNUtils)
 
 static NSOperationQueue* _imageProcessing_queue;
+
+/// 指定したサイズにクロップ(リサイズなしでわりと高速)
+// 320*240サイズを 240*240にクロップして iPod touch で 4msくらい
+-(UIImage*)cropToRect:(CGRect)rect{
+	// 画像が回転していた場合、CGImageCreateWithImageInRect に渡すrectを反転させる
+	CGRect fixedRect = rect;
+	if( self.imageOrientation == UIImageOrientationLeft || self.imageOrientation == UIImageOrientationRight ){
+		fixedRect = CGRectMake( rect.origin.y, rect.origin.x, rect.size.height, rect.size.width);
+	}
+	
+	CGImageRef imageRef = CGImageCreateWithImageInRect( self.CGImage, fixedRect );
+	UIImage *finalImage = [UIImage imageWithCGImage:imageRef scale:1 orientation:self.imageOrientation];
+	CGImageRelease(imageRef);
+	return finalImage;
+}
+
+
+/// デバイスの画面比率に合わせてクロップ
+-(UIImage*)cropToDeviceAspectRatio{
+	NSInteger width = self.size.width;
+	NSInteger height = self.size.height;
+	CGRect rect = CGRectMake( 0, 0, width, height);
+	CGFloat screenAspectRatio = [NNUtils screenAspectRatio];
+	if( width < height ){
+		// この画像は縦長
+		rect.size.width = height * screenAspectRatio;
+		rect.origin.x = (width/2 - rect.size.width/2);
+	} else {
+		// この画像は横長
+		rect.size.height = width * screenAspectRatio;
+		rect.origin.y = (height/2 - rect.size.height/2);
+	}
+	return [self cropToRect:rect];
+}
+
+
+
 
 
 +(NSOperationQueue*)imageProcessingQueue{

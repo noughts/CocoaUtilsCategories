@@ -10,6 +10,9 @@
 
 @interface UIImage (NNUtils)
 
+/// デバイスの画面比率に合わせてクロップ
+-(UIImage*)cropToDeviceAspectRatio;
+
 /// blurを非同期でかける。寸法に応じて自動で最適化します。
 -(void)imageByApplyingBlurWithRadius:(NSInteger)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor queue:(NSOperationQueue*)queue completion:(void (^)(UIImage* result_img))completion;
 

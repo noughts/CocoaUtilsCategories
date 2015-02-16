@@ -10,6 +10,9 @@
 
 @interface NNUtils : NSObject
 
+/// 画面の縦横比
++(CGFloat)screenAspectRatio;
+
 /// JavaScript の setTimetout
 +(void)setTimeout:(void(^)(void))block delay:(float)delay;
 

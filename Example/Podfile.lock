@@ -5,6 +5,7 @@ PODS:
     - Expecta
     - FBSnapshotTestCase
   - FBSnapshotTestCase (1.5)
+  - NNProfiler (0.1.0)
   - Specta (0.3.0.beta1)
 
 DEPENDENCIES:
@@ -12,16 +13,22 @@ DEPENDENCIES:
   - Expecta
   - Expecta+Snapshots
   - FBSnapshotTestCase
+  - NNProfiler (from `https://github.com/noughts/NNProfiler`)
   - Specta (from `https://github.com/specta/specta.git`, tag `v0.3.0.beta1`)
 
 EXTERNAL SOURCES:
   CocoaUtilsCategories:
     :path: ../
+  NNProfiler:
+    :git: https://github.com/noughts/NNProfiler
   Specta:
     :git: https://github.com/specta/specta.git
     :tag: v0.3.0.beta1
 
 CHECKOUT OPTIONS:
+  NNProfiler:
+    :commit: 174fc51f651d738a9d5b098604b7d281c47e4fbf
+    :git: https://github.com/noughts/NNProfiler
   Specta:
     :git: https://github.com/specta/specta.git
     :tag: v0.3.0.beta1
@@ -31,6 +38,7 @@ SPEC CHECKSUMS:
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   Expecta+Snapshots: 4a56b9411c6ed156987072e52c39de67d864015a
   FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
+  NNProfiler: 330eed9bf91be62d94e189f61df579ece9bbcc35
   Specta: 63e8ac8e07db6675c7096d37f77a266a1be4c02d
 
 COCOAPODS: 0.35.0

@@ -2,10 +2,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'CocoaUtilsCategories', :exclusive => true do
   pod "CocoaUtilsCategories", :path => "../"
+  pod "NNProfiler", :git => 'https://github.com/noughts/NNProfiler'
 end
 
 target 'Tests', :exclusive => true do
   pod "CocoaUtilsCategories", :path => "../"
+  pod "NNProfiler", :git => 'https://github.com/noughts/NNProfiler'
 
   pod 'Specta', :git => 'https://github.com/specta/specta.git', :tag => 'v0.3.0.beta1'
   pod 'Expecta'
