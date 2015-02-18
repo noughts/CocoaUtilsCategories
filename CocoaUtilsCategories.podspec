@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CocoaUtilsCategories"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "A short description of CocoaUtilsCategories."
   s.description      = <<-DESC
                        An optional longer description of CocoaUtilsCategories
