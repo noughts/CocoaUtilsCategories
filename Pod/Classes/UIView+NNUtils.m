@@ -11,6 +11,7 @@
 @implementation UIView (NNUtils)
 
 
+
 UIViewAnimationOptions curveOptionsFromCurve(UIViewAnimationCurve curve){
 	switch (curve)	{
 		case UIViewAnimationCurveEaseInOut:
@@ -33,6 +34,20 @@ UIViewAnimationOptions curveOptionsFromCurve(UIViewAnimationCurve curve){
 	[UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] integerValue] delay:0 options:curveOptions animations:animations completion:completion];
 }
 
+
+
+
+
+
+/// 現在の状態をキャプチャしたUIImageを返す
+-(UIImage *)screenCaptureAfterScreenUpdates:(BOOL)afterUpdates{
+	UIImage *capture;
+	UIGraphicsBeginImageContextWithOptions(self.frame.size , NO , 1.0 );
+	[self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+	capture = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return capture;
+}
 
 
 

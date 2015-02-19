@@ -10,8 +10,16 @@
 
 @interface UIView (NNUtils)
 
+
 /// キーボード上下のNotificationに合わせてアニメーション
 + (void)animateWithKeyboardNotification:(NSNotification *)note animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+
+
+
+/// 現在の状態をキャプチャしたUIImageを返す
+-(UIImage *)screenCaptureAfterScreenUpdates:(BOOL)afterUpdates;
+
+
 
 /// 高さ制約を返す
 -(NSLayoutConstraint*)heightConstraint;
