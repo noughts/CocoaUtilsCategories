@@ -33,6 +33,7 @@
 			[content didMoveToParentViewController:self];// content の didMoveToParentViewController が呼ばれる
 		}];
 	} else {
+		content.view.alpha = 1;
 		[content endAppearanceTransition];// content の viewDidAppear が呼ばれる
 		[content didMoveToParentViewController:self];// content の didMoveToParentViewController が呼ばれる
 	}
