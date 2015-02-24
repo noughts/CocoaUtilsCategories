@@ -11,6 +11,12 @@
 
 @interface NSURL (NNUtils)
 
+/// Documentsディレクトリ内のランダムなファイルURLを作成
++(NSURL*)randomDocumentFilePathWithExtension:(NSString*)extension;
+
+/// テンポラリディレクトリ内のランダムなファイルURLを作成
++(NSURL*)randomTemporaryFileURLWithExtension:(NSString *)extension;
+
 -(void)dump;
 
 @end
