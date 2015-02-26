@@ -52,8 +52,8 @@
 
 /// 指定したViewControllerを自身から削除
 -(void)removeContentController:(UIViewController*)content animated:(BOOL)animated{
-	[content beginAppearanceTransition:NO animated:animated];
 	[content willMoveToParentViewController:self];/// これから取り除かれようとしていることを通知する
+	[content beginAppearanceTransition:NO animated:animated];/// contentのviewWillDisappearが呼ばれる
 	
 	if( animated ){
 		[UIView animateWithDuration:3 delay:0 options:(7 << 16) animations:^{
@@ -61,12 +61,12 @@
 		} completion:^(BOOL finished) {
 			[content.view removeFromSuperview];// 子ViewControllerの`view`を取り除く
 			[content removeFromParentViewController];// 自動的に`didMoveToParentViewController:`が呼ばれる
-			[content endAppearanceTransition];
+			[content endAppearanceTransition];/// contentのviewDidDisappearが呼ばれる
 		}];
 	} else {
 		[content.view removeFromSuperview];// 子ViewControllerの`view`を取り除く
 		[content removeFromParentViewController];// 自動的に`didMoveToParentViewController:`が呼ばれる
-		[content endAppearanceTransition];
+		[content endAppearanceTransition];/// contentのviewDidDisappearが呼ばれる
 	}
 }
 
