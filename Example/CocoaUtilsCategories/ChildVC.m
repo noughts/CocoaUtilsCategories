@@ -38,6 +38,19 @@
 	NBULogVerbose(@"viewDidDisappear");
 }
 
+
+-(void)willMoveToParentViewController:(UIViewController *)parent{
+	[super willMoveToParentViewController:parent];
+	NBULogVerbose(@"willMoveToParentViewController parent=%@", parent);
+}
+
+
+-(void)didMoveToParentViewController:(UIViewController *)parent{
+	[super didMoveToParentViewController:parent];
+	NBULogVerbose(@"didMoveToParentViewController parent=%@", parent);
+}
+
+
 -(void)dealloc{
 	NBULogVerbose(@"dealloc");
 }

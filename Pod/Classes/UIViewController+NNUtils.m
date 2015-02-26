@@ -53,7 +53,7 @@
 /// 指定したViewControllerを親から削除
 -(void)removeContentController:(UIViewController*)content animated:(BOOL)animated{
 	// これから取り除かれようとしていることを通知する
-	[content willMoveToParentViewController:nil];
+	[content willMoveToParentViewController:self];
 	
 	if( animated ){
 		[UIView animateWithDuration:3 delay:0 options:(7 << 16) animations:^{
