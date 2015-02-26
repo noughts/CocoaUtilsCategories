@@ -15,7 +15,7 @@
 
 /// 指定したViewControllerを子として追加
 - (void)addContentController:(UIViewController *)content animated:(BOOL)animated{
-	[content beginAppearanceTransition:YES animated:YES];// viewDidAppearを正常なタイミングで呼ぶため、トランジション開始を伝える
+	[content beginAppearanceTransition:YES animated:animated];// viewDidAppearを正常なタイミングで呼ぶため、トランジション開始を伝える
 	
 	// 自身のビューコントローラ階層に追加
 	// 自動的に子ViewControllerの`willMoveToParentViewController:`メソッドが呼ばれる
@@ -50,10 +50,10 @@
 }
 
 
-/// 指定したViewControllerを親から削除
+/// 指定したViewControllerを自身から削除
 -(void)removeContentController:(UIViewController*)content animated:(BOOL)animated{
-	// これから取り除かれようとしていることを通知する
-	[content willMoveToParentViewController:self];
+	[content beginAppearanceTransition:NO animated:animated];
+	[content willMoveToParentViewController:self];/// これから取り除かれようとしていることを通知する
 	
 	if( animated ){
 		[UIView animateWithDuration:3 delay:0 options:(7 << 16) animations:^{
@@ -61,10 +61,12 @@
 		} completion:^(BOOL finished) {
 			[content.view removeFromSuperview];// 子ViewControllerの`view`を取り除く
 			[content removeFromParentViewController];// 自動的に`didMoveToParentViewController:`が呼ばれる
+			[content endAppearanceTransition];
 		}];
 	} else {
 		[content.view removeFromSuperview];// 子ViewControllerの`view`を取り除く
 		[content removeFromParentViewController];// 自動的に`didMoveToParentViewController:`が呼ばれる
+		[content endAppearanceTransition];
 	}
 }
 
