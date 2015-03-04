@@ -11,6 +11,8 @@
 		28A2573D63F3D0FF3E003A88 /* libPods-CocoaUtilsCategories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D346F07C391A94D59D1A70 /* libPods-CocoaUtilsCategories.a */; };
 		4D1F9A631A8C6A8700217954 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F9A621A8C6A8700217954 /* MainVC.m */; };
 		4D1F9A661A8C6ACC00217954 /* UIButtonDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F9A651A8C6ACC00217954 /* UIButtonDemoVC.m */; };
+		4D9066B61A9EE2F000A409CC /* UIViewControllerDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9066B51A9EE2F000A409CC /* UIViewControllerDemoVC.m */; };
+		4D9066BA1A9EE33500A409CC /* ChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9066B91A9EE33500A409CC /* ChildVC.m */; };
 		4DC89A951A91F56E009E8C88 /* UIImageDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC89A941A91F56E009E8C88 /* UIImageDemoVC.m */; };
 		4DC89A991A91F75F009E8C88 /* screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DC89A981A91F75F009E8C88 /* screen.jpg */; };
 		4DE1DAB31A95D95400BD6950 /* ImageBlurVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1DAB21A95D95400BD6950 /* ImageBlurVC.m */; };
@@ -48,6 +50,10 @@
 		4D1F9A621A8C6A8700217954 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		4D1F9A641A8C6ACC00217954 /* UIButtonDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonDemoVC.h; sourceTree = "<group>"; };
 		4D1F9A651A8C6ACC00217954 /* UIButtonDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonDemoVC.m; sourceTree = "<group>"; };
+		4D9066B41A9EE2F000A409CC /* UIViewControllerDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewControllerDemoVC.h; sourceTree = "<group>"; };
+		4D9066B51A9EE2F000A409CC /* UIViewControllerDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewControllerDemoVC.m; sourceTree = "<group>"; };
+		4D9066B81A9EE33500A409CC /* ChildVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildVC.h; sourceTree = "<group>"; };
+		4D9066B91A9EE33500A409CC /* ChildVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildVC.m; sourceTree = "<group>"; };
 		4DC89A931A91F56E009E8C88 /* UIImageDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageDemoVC.h; sourceTree = "<group>"; };
 		4DC89A941A91F56E009E8C88 /* UIImageDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageDemoVC.m; sourceTree = "<group>"; };
 		4DC89A981A91F75F009E8C88 /* screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screen.jpg; sourceTree = "<group>"; };
@@ -110,6 +116,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9066B71A9EE32100A409CC /* .UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D9066B81A9EE33500A409CC /* ChildVC.h */,
+				4D9066B91A9EE33500A409CC /* ChildVC.m */,
+				4D9066B41A9EE2F000A409CC /* UIViewControllerDemoVC.h */,
+				4D9066B51A9EE2F000A409CC /* UIViewControllerDemoVC.m */,
+			);
+			name = .UIViewController;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +164,7 @@
 		6003F593195388D20070C39A /* CocoaUtilsCategories */ = {
 			isa = PBXGroup;
 			children = (
+				4D9066B71A9EE32100A409CC /* .UIViewController */,
 				4DE1DAB11A95D95400BD6950 /* ImageBlurVC.h */,
 				4DE1DAB21A95D95400BD6950 /* ImageBlurVC.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -386,10 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9066B61A9EE2F000A409CC /* UIViewControllerDemoVC.m in Sources */,
 				4DE1DAB61A95DB1C00BD6950 /* UIViewBlurVC.m in Sources */,
 				4D1F9A661A8C6ACC00217954 /* UIButtonDemoVC.m in Sources */,
 				4DC89A951A91F56E009E8C88 /* UIImageDemoVC.m in Sources */,
 				4DE1DAB31A95D95400BD6950 /* ImageBlurVC.m in Sources */,
+				4D9066BA1A9EE33500A409CC /* ChildVC.m in Sources */,
 				6003F59E195388D20070C39A /* NNAppDelegate.m in Sources */,
 				4D1F9A631A8C6A8700217954 /* MainVC.m in Sources */,
 				6003F5A7195388D20070C39A /* NNViewController.m in Sources */,

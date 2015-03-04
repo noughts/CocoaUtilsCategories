@@ -10,6 +10,12 @@
 
 @interface UIImage (NNUtils)
 
+/// JpegにしてDocumentsディレクトリに保存
+-(NSURL*)saveJpegToDocumentDirectoryWithQuality:(CGFloat)quality error:(NSError**)error;
+
+/// JpegにしてTemporaryディレクトリに保存
+-(NSURL*)saveJpegToTemporaryDirectoryWithQuality:(CGFloat)quality error:(NSError**)error;
+
 /// デバイスの画面比率に合わせてクロップ
 -(UIImage*)cropToDeviceAspectRatio;
 

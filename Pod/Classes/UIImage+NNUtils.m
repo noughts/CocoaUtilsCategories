@@ -9,10 +9,26 @@
 #import "UIImage+NNUtils.h"
 #import "UIImageEffects.h"
 #import "NNUtils.h"
+#import "NSData+NNUtils.h"
 
 @implementation UIImage (NNUtils)
 
 static NSOperationQueue* _imageProcessing_queue;
+
+
+/// JpegにしてDocumentsディレクトリに保存
+-(NSURL*)saveJpegToDocumentDirectoryWithQuality:(CGFloat)quality error:(NSError**)error{
+	NSData* data = UIImageJPEGRepresentation( self, quality );
+	return [data saveToDocumentsDirectoryWithExtension:@"jpg" error:error];
+}
+
+/// JpegにしてTemporaryディレクトリに保存
+-(NSURL*)saveJpegToTemporaryDirectoryWithQuality:(CGFloat)quality error:(NSError**)error{
+	NSData* data = UIImageJPEGRepresentation( self, quality );
+	return [data saveToTemporaryDirectoryWithExtension:@"jpg" error:error];
+}
+
+
 
 /// 指定したサイズにクロップ(リサイズなしでわりと高速)
 // 320*240サイズを 240*240にクロップして iPod touch で 4msくらい

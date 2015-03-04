@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fjB-N7-hH8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fjB-N7-hH8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rx-PJ-EJW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="1264"/>
+            <point key="canvasLocation" x="-630" y="-370"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="kq8-wZ-UY1">
@@ -111,6 +111,23 @@
                                             <segue destination="QXC-e1-stQ" kind="push" id="aXj-3a-qMD"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="s5B-Mz-xM5" style="IBUITableViewCellStyleDefault" id="HZ6-wu-Z9C">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZ6-wu-Z9C" id="zv9-NF-6xj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s5B-Mz-xM5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="N4v-Hu-omx" kind="push" id="nlN-KX-sd0"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -165,7 +182,52 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayc-ph-xBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="558"/>
+            <point key="canvasLocation" x="1227" y="1460"/>
+        </scene>
+        <!--View Controller DemoVC-->
+        <scene sceneID="0ic-cC-qDb">
+            <objects>
+                <viewController id="N4v-Hu-omx" customClass="UIViewControllerDemoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n6m-mS-4w4"/>
+                        <viewControllerLayoutGuide type="bottom" id="GsZ-KD-wyy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vCs-Uh-tLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp7-zH-lQm">
+                                <rect key="frame" x="192" y="530" width="108" height="30"/>
+                                <state key="normal" title="Open From Self">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openFromSelf:" destination="N4v-Hu-omx" eventType="touchUpInside" id="OFu-gp-1PP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ2-Ah-6UB">
+                                <rect key="frame" x="20" y="492" width="222" height="30"/>
+                                <state key="normal" title="Open From NavigationController">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openFromNavigationController:" destination="N4v-Hu-omx" eventType="touchUpInside" id="PoY-YD-b9e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cp7-zH-lQm" secondAttribute="trailing" constant="20" symbolic="YES" id="96K-Rv-U0o"/>
+                            <constraint firstItem="GsZ-KD-wyy" firstAttribute="top" secondItem="cp7-zH-lQm" secondAttribute="bottom" constant="8" symbolic="YES" id="A1P-kH-zMR"/>
+                            <constraint firstItem="pQ2-Ah-6UB" firstAttribute="leading" secondItem="vCs-Uh-tLZ" secondAttribute="leading" constant="20" symbolic="YES" id="SAX-Ua-P0Y"/>
+                            <constraint firstItem="cp7-zH-lQm" firstAttribute="top" secondItem="pQ2-Ah-6UB" secondAttribute="bottom" constant="8" symbolic="YES" id="jaL-ix-pKh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h9D-U5-w0Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHs-0Q-b6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="2220"/>
         </scene>
         <!--View BlurVC-->
         <scene sceneID="xOD-EZ-GI5">
@@ -222,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76d-cB-0bG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="-113"/>
+            <point key="canvasLocation" x="1623" y="639"/>
         </scene>
         <!--Image BlurVC-->
         <scene sceneID="rUR-X4-CK6">
@@ -257,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqQ-Bp-QMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="558"/>
+            <point key="canvasLocation" x="1623" y="1460"/>
         </scene>
         <!--Button DemoVC-->
         <scene sceneID="Eq8-5f-JbU">
@@ -410,7 +472,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="935" y="-864"/>
+            <point key="canvasLocation" x="1227" y="-76"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="SYc-1n-DvH">
@@ -452,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR5-LU-aHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-113"/>
+            <point key="canvasLocation" x="1227" y="639"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tUs-qW-IrY">
@@ -488,7 +550,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hoge:" destination="Mt7-Dd-lWc" eventType="touchUpInside" id="yf4-N9-gD3"/>
+                                    <action selector="onCloseButtonTap:" destination="Mt7-Dd-lWc" eventType="touchUpInside" id="jWd-Gs-9sz"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oh-4u-LXe">
@@ -500,7 +562,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="hoge:" destination="Mt7-Dd-lWc" eventType="touchUpInside" id="Sm6-1R-e5v"/>
+                                            <action selector="onCloseButtonTap:" destination="Mt7-Dd-lWc" eventType="touchUpInside" id="3VH-64-HHY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -526,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyG-zL-0qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1395" y="1264"/>
+            <point key="canvasLocation" x="1623" y="2220"/>
         </scene>
     </scenes>
     <resources>
