@@ -7,12 +7,20 @@
 //
 
 #import "NNAppDelegate.h"
+#import <NSString+NNUtils.h>
 
 @implementation NNAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+
+	
+	
+	NSString* hoge = @"memberList";
+	NSLog( @"%@", [hoge capitalizedFirstLetter] );
+	
+	
+	
+	
     return YES;
 }
 							

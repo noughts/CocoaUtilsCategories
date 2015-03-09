@@ -10,6 +10,21 @@
 
 @implementation NSString (NNUtils)
 
+/// はじめの文字を大文字にした文字列を返す。Cocoa標準のcapitalizedStringだと、"memberList" -> "Memberlist" になるが、これは "MemberList"になります。 
+-(NSString*)capitalizedFirstLetterString{
+	if (self.length <= 1) {
+		return self.capitalizedString;
+	} else {
+		return [NSString stringWithFormat:@"%@%@",[[self substringToIndex:1] uppercaseString],[self substringFromIndex:1]];
+	}
+}
+
+
+
+
+
+
+
 +(void)availableTagSchemes{
 	NSArray *schemes = [NSLinguisticTagger availableTagSchemesForLanguage:@"ja"];
 	NSLog(@"schemes:%@", schemes);
