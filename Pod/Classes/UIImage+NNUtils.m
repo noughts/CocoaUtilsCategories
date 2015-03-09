@@ -10,6 +10,9 @@
 #import "UIImageEffects.h"
 #import "NNUtils.h"
 #import "NSData+NNUtils.h"
+#import "NSURL+NNUtils.h"
+@import MobileCoreServices;
+@import ImageIO;
 
 @implementation UIImage (NNUtils)
 
@@ -27,6 +30,24 @@ static NSOperationQueue* _imageProcessing_queue;
 	NSData* data = UIImageJPEGRepresentation( self, quality );
 	return [data saveToTemporaryDirectoryWithExtension:@"jpg" error:error];
 }
+
+
+
+
+/// UIImageJPEGRepresentation を使わずに UIImage を保存する方法。再エンコードしなくていいが、UIImageJPEGRepresentationの1.7倍くらい時間かかる
+-(NSURL*)saveWithoutReEncode{
+	NSURL* url = [NSURL randomTemporaryFileURLWithExtension:@"jpg"];
+	CFURLRef cfurl = (__bridge CFURLRef) url;
+	CGImageDestinationRef destination = CGImageDestinationCreateWithURL(cfurl, kUTTypeJPEG, 1, NULL);
+	CGImageDestinationAddImage(destination, self.CGImage, nil);
+	
+	if (!CGImageDestinationFinalize(destination)) {
+		NSLog(@"Failed to write image to %@", url);
+	}
+	return url;
+}
+
+
 
 
 

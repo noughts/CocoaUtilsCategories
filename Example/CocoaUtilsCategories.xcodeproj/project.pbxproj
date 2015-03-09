@@ -24,7 +24,6 @@
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* NNAppDelegate.m */; };
 		6003F5A1195388D20070C39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F59F195388D20070C39A /* Main.storyboard */; };
-		6003F5A7195388D20070C39A /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* NNViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -73,8 +72,6 @@
 		6003F59C195388D20070C39A /* NNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* NNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* NNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* NNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -173,8 +170,6 @@
 				4D1F9A621A8C6A8700217954 /* MainVC.m */,
 				6003F59C195388D20070C39A /* NNAppDelegate.h */,
 				6003F59D195388D20070C39A /* NNAppDelegate.m */,
-				6003F5A5195388D20070C39A /* NNViewController.h */,
-				6003F5A6195388D20070C39A /* NNViewController.m */,
 				4DC89A981A91F75F009E8C88 /* screen.jpg */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				4D1F9A641A8C6ACC00217954 /* UIButtonDemoVC.h */,
@@ -412,7 +407,6 @@
 				4D9066BA1A9EE33500A409CC /* ChildVC.m in Sources */,
 				6003F59E195388D20070C39A /* NNAppDelegate.m in Sources */,
 				4D1F9A631A8C6A8700217954 /* MainVC.m in Sources */,
-				6003F5A7195388D20070C39A /* NNViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
