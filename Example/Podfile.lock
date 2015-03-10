@@ -7,7 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0-rc2):
     - CocoaLumberjack/Default
-  - CocoaUtilsCategories (1.4.0):
+  - CocoaUtilsCategories (1.5.1):
     - NBULog
   - Expecta (0.3.2)
   - Expecta+Snapshots (1.3.1):
@@ -46,7 +46,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 6027cd9a0665203a7df456c526e137f02cd547e1
-  CocoaUtilsCategories: 0728c078f836ea48f40453cc1b02476f41b4b8aa
+  CocoaUtilsCategories: 5c91b64784ee18a8d9c5bfa268dbf6c419879bc2
   Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
   Expecta+Snapshots: 4a56b9411c6ed156987072e52c39de67d864015a
   FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
