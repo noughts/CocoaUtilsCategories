@@ -16,7 +16,7 @@
 	
 	
 	NSString* hoge = @"memberList";
-	NSLog( @"%@", [hoge capitalizedFirstLetter] );
+	NSLog( @"%@", [hoge capitalizedFirstLetterString] );
 	
 	
 	
