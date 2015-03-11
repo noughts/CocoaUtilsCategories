@@ -7,8 +7,23 @@
 //
 
 #import "UIButton+NNUtils.h"
+#import <NBULog.h>
 
 @implementation UIButton (NNUtils)
+
+/// ボタンのタイトル変更
+-(void)setTitle:(NSString *)title animated:(BOOL)animated{
+	if( animated ){
+		[self setTitle:title forState:UIControlStateNormal];
+	} else {
+		if( self.buttonType != UIButtonTypeCustom ){
+			NBULogWarn(@"ボタンタイトルのアニメーションなし変更は、buttonType == UIButtonTypeCustom のみ動作する仕様のようです");
+		}
+		[UIView setAnimationsEnabled:NO];
+		[self setTitle:title forState:UIControlStateNormal];/// UIButtonTypeCustom であることに注意
+		[UIView setAnimationsEnabled:YES];
+	}
+}
 
 /// 自身が配置されているUICollectionViewCell
 -(UICollectionViewCell*)attachedCollectionViewCell{

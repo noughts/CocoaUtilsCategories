@@ -10,6 +10,9 @@
 
 @interface UIButton (NNUtils)
 
+/// ボタンのタイトル変更
+-(void)setTitle:(NSString *)title animated:(BOOL)animated;
+
 /// 自身が配置されているUICollectionViewCell
 -(UICollectionViewCell*)attachedCollectionViewCell;
 
